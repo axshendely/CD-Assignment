@@ -21,7 +21,7 @@ Secrets are sensitive pieces of data that are used in software development workf
 3-	*.*
 
 <br>
-now i understand how i would commit my project, so that the changes flow directly to the serverg.
+now i understand how i would commit my project, so that the changes flow directly to the server.
 <br>
 <br>
 
