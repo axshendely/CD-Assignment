@@ -29,14 +29,14 @@ jobs:
     runs-on: ubuntu-22.04
     name: Deploy
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - name: Copy repository contents to vps via scp
         uses: appleboy/scp-action@master
         env:
-          HOST: '${{ secrets.HOST }}'
-          USERNAME: '${{ secrets.USERNAME }}'
-          PORT: '${{ secrets.PORT }}'
-          PASSWORD: '${{ secrets.PASSWORD }}'
+          host: '${{ secrets.HOST }}'
+          port: '${{ secrets.PORT }}'
+		  username: '${{ secrets.USERNAME }}'
+          password: '${{ secrets.PASSWORD }}'
         with:
           source: .
           target: /home/CD-Assignment/
@@ -45,7 +45,7 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: '${{ secrets.HOST }}'
-          USERNAME: '${{ secrets.USERNAME }}'
-          PORT: '${{ secrets.PORT }}'
-          PASSWORD: '${{ secrets.PASSWORD }}'
+          port: '${{ secrets.PORT }}'
+		  username: '${{ secrets.USERNAME }}'
+          password: '${{ secrets.PASSWORD }}'
           script: sh /home/CD-Assignment/commands.sh
