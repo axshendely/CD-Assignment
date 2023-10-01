@@ -1,4 +1,5 @@
 # CD-Assignment
+[![Run tests and deploy application](https://github.com/axshendely/CD-Assignment/actions/workflows/python-app.yml/badge.svg)](https://github.com/axshendely/CD-Assignment/actions/workflows/python-app.yml)
 ### 1. three components of the solution
 
 1-	Actions
@@ -21,7 +22,10 @@ Secrets are sensitive pieces of data that are used in software development workf
 3-	*...*
 
 <br>
-now i understand how i would commit my project, so that the changes flow directly to the server.
+when I started looking for a decent solution for not having a credit card for a server, I bought a server with bitcoin (so no digital ocean droplet) but it went fine once I had my server I knew how to proceed would come along!
+all my problems solved by using crypto to buy a server and go through the steps!
+now i understand how i would commit my project, 
+so that the changes flow directly to the server.
 <br>
 <br>
 
