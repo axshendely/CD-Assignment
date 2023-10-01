@@ -1,4 +1,4 @@
-name: Run tests and deploy application to VPS
+name: Run tests and deploy with key
 on: push
 jobs:
   run-tests:
