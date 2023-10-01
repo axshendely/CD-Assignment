@@ -1,0 +1,41 @@
+name: Run tests and deploy application to VPS
+on: push
+jobs:
+  run-tests:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.10.12
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+      - name: Run tests
+        run: pytest
+        
+  deploy:
+    needs: run-tests
+    runs-on: ubuntu-22.04
+    name: Deploy
+    steps:
+      - uses: actions/checkout@v3
+      - name: Copy repository contents to vps
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.PORT }}
+          source: .
+          target: /home/CD-Assignment/
+          
+      - name: Executing remote command
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.SSH_KEY }}
+          script: sh /home/CD-Assignment/commands.sh
