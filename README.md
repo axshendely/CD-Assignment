@@ -19,7 +19,7 @@ Secrets are sensitive pieces of data that are used in software development workf
 	
 2-	*"No Server"*
 
-3-	*...*
+3-	*....*
 
 <br>
 when I started looking for a decent solution for not having a credit card for a server, I bought a server with bitcoin (so no digital ocean droplet) but it went fine once I had my server I knew how to proceed would come along!
