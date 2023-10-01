@@ -24,10 +24,10 @@ jobs:
       - name: Copy repository contents to vps via scp
         uses: appleboy/scp-action@master
         env:
-          host: '${{ secrets.HOST }}'
-          username: '${{ secrets.USERNAME }}'
-          port: '${{ secrets.PORT }}'
-          password: '${{ secrets.PASSWORD }}'
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          password: ${{ secrets.PASSWORD }}
         with:
           source: .
           target: /home/CD-Assignment/
@@ -35,8 +35,8 @@ jobs:
       - name: Executing remote command
         uses: appleboy/ssh-action@master
         with:
-          host: '${{ secrets.HOST }}'
-          username: '${{ secrets.USERNAME }}'
-          port: '${{ secrets.PORT }}'
-          password: '${{ secrets.PASSWORD }}'
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          password: ${{ secrets.PASSWORD }}
           script: sh /home/CD-Assignment/commands.sh
