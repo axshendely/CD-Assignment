@@ -18,7 +18,7 @@ Secrets are sensitive pieces of data that are used in software development workf
 	
 2-	*"No Server"*
 
-3-	*.*
+3-	*...*
 
 <br>
 now i understand how i would commit my project, so that the changes flow directly to the server.
